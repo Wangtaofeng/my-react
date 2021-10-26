@@ -23,6 +23,7 @@
         // 同样是通过赋值语句将方法作为实例对象的方法,而不是放在原型上
         // 需要注意的是,不通过构造器里bind绑定this的话,可以直接赋值语句时就赋值一个箭头函数
         // 箭头函数一个特点就是不用关心this指向问题,即定义时的this就是执行时的this
+        // 箭头函数本身没有this，但是声明时会捕获上下文的this作为自己的this
         changeWeather = () => {
             const is = this.state.isHot
             this.setState({isHot: !is})
