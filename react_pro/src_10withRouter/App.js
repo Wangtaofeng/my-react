@@ -1,0 +1,23 @@
+import React, { Component } from 'react'
+import { Route, Redirect } from 'react-router-dom'
+import About from './pages/About'
+import Home from './pages/Home'
+import MyLink from './MyLink'
+import Header from './Header'
+import './index.css'
+
+export default class App extends Component {
+
+  render () {
+    return (
+      <div>
+        <Header />
+        <MyLink className="a" to="/About">About</MyLink><br />
+        <MyLink className="a" to="/Home">Home</MyLink>
+        <Route path="/About" component={About} />
+        <Route path="/Home" component={Home} />
+        <Redirect to="/About" />
+      </div>
+    )
+  }
+}

@@ -27,7 +27,7 @@
     */
 
     // 组件创建并挂载
-    class Demo1 extends React.Component {
+    class Demo1 extends React.Component { 
       // 首先执行的constructor钩子
       constructor(props) {
         console.log('1-------constructor')
@@ -105,7 +105,7 @@
       Count = () => {
         this.setState({ count: this.state.count + 1 })
       }
-      // 不更新状态, 调用强制更新的函数, 导致跳过阀门直接执行后面的钩子函数
+      // 调用强制更新的函数, 导致跳过阀门直接执行后面的钩子函数, 其子组件仍会执行shouldComponentUpdate
       forceUp = () => {
         this.forceUpdate()
       }

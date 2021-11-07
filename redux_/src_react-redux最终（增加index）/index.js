@@ -10,9 +10,8 @@ ReactDOM.render(
     <App />
   </Provider>,
   document.getElementById('root')
-  )
-  // 正常渲染, 注意这里是两次, 一次正常, 一次是放在回调里的
-  // 使用react-redux后就不需要监听变化重新渲染了
+)
+// 使用react-redux后就不需要监听变化重新渲染了
 
 // store.subscribe(() => {
 //   ReactDOM.render(<App />, document.getElementById('root'))

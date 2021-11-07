@@ -5,6 +5,7 @@ import { creatIncreaseAction, creatDecreaseAction, createIncrementAsyncAction } 
 // 将ui组件和容器写在一个组件中, 容器放下面, 不用再引入ui组件, 直接就能拿着用
 class Count extends Component {
   incerate = () => {
+    // 虽然本质上是dispatch，但是不需要显示调用
     this.props.increase(1)
   }
   decrease = () => {
@@ -32,11 +33,13 @@ class Count extends Component {
     )
   }
 }
+// 多个reducer通过combine连接成的对象, 都在state中存着, 连接时的key就是这里取值是state的key
 const mapStateToProps = state => ({ count: state.count })
 const mapDispatchToProps = {
   // 这里也可以返回一个对象, 就是一个映射关系, key的值是一个函数, 这里不进行调用
   // 因为在action中可以调用, 这里只是将那里定义的函数传递出去
   // 原来返回函数的形式, 是在回调函数中调用action中的函数, 这里只是传递了函数
+  // 当返回的是一个对象时，对象的属性对应着creatAction中的方法。此时不需要显式的dispatch调用，直接执行对象的方法即可
   increase: creatIncreaseAction,
   decrease: creatDecreaseAction,
   increaseAsync: createIncrementAsyncAction
