@@ -9,7 +9,7 @@ function Deom () {
   // useEffect其实是componentDidMount, componentDidUpdate, componentWillUmount三个钩子的集成,
   // 第一个参数是一个函数, 该函数就是生命周期函数内需要写的,return一个函数时, 这个函数就是componentWillUmount
   // 在return函数之前的函数体具体是前两个钩子的哪一个, 还是要看第二个参数, 第二个参数是一个数组
-  // 里面存放的是监视的state, 不传值就不会监视, 就只会像componentDidMount一样只执行一次
+  // 里面存放的是监视的state, **不传值就不会监视, 就只会像componentDidMount一样只执行一次
   // 如果直接不传第二个参数, 就全部监视, 就是update钩子, 任意一个state改变都会引起执行函数体
   // 或者传递某个状态值, 也是起到了update钩子的作用, 但是只是监视的state变化才会执行函数体
   React.useEffect(() => {

@@ -4,7 +4,7 @@ export default class index extends Component {
   state = {
     Error: ''
   }
-  // 注意需要static, 而且参数error是子组件错误时传递的错误信息
+  // 注意需要static, 而且参数error是子组件错误时传递的错误信息, 该函数也算是一个钩子吧
   static getDeriveStateFromError (Error) {
     // 当子组件出错时, 会执行该函数, 不能捕获自己的
     // 一般是在子组件加载时的生命周期函数调用出错会执行该函数
